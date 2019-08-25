@@ -28,7 +28,7 @@
 
 
     <TextView
-        android:id="@+id/item_unsplash_photo_text_view"
+        android:id="@+id/list_item_username_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_small"

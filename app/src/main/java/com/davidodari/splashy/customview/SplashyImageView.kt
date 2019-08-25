@@ -4,16 +4,12 @@ import android.content.Context
 import android.util.AttributeSet
 import android.widget.ImageView
 
-/**
- * Created By David Odari
- * On 26/08/19
- *
- **/
+
 class SplashyImageView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : ImageView(context, attrs, defStyleAttr) {
 
-    private var aspectRatio: Double = -1.0
+    var aspectRatio: Double = -1.0
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)

@@ -75,6 +75,9 @@ dependencies {
     //Gson Convertor
     implementation "com.squareup.retrofit2:converter-gson:$gson_converter_version"
 
+//    Picasso Image Loader
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
     //Testing
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
