@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.davidodari.splashy">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:name=".SplashyApplication"
         android:allowBackup="true"
