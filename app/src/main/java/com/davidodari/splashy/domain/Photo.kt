@@ -1,5 +1,7 @@
 package com.davidodari.splashy.domain
 
+import com.google.gson.annotations.SerializedName
+
 /**
  * Created By David Odari
  * On 25/08/19
@@ -28,5 +30,6 @@ data class Links(
     val self: String,
     val html: String,
     val download: String,
-    val download_location: String
+    @SerializedName("download_location")
+    val downloadLocation: String
 )
