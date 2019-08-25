@@ -7,4 +7,4 @@ import com.davidodari.splashy.domain.Photo
  * On 25/08/19
  *
  **/
-data class PhotosResponse(var photos:List<Photo>)
+data class PhotosResponse(var photos:MutableList<Photo>)
