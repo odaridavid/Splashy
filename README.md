@@ -18,5 +18,7 @@ the global ```gradle.properties``` file as such
 ```properties
 UNSPLASH_ACCESS_KEY = your access key
 ```
-
+## Screenshots
+|![Home Screen](screenshots/home.png)|
+|:--:|
 <i>&copy; David Odari,2019 </i>
