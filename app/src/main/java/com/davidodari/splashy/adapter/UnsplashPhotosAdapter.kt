@@ -36,6 +36,7 @@ class UnsplashPhotosAdapter :
         getItem(position)?.let { photo ->
             holder.unsplashImageView.aspectRatio = photo.height.toDouble() / photo.width.toDouble()
             holder.itemView.setBackgroundColor(Color.parseColor(photo.color))
+            holder.likes.text = photo.likes.toString()
             holder.unsplashUsernameTextView.text = photo.user.name
             Picasso.get()
                 .load(photo.urls.small)
@@ -46,6 +47,7 @@ class UnsplashPhotosAdapter :
     inner class PhotoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val unsplashImageView: SplashyImageView = view.list_item_splashy_image_view
         val unsplashUsernameTextView: TextView = view.list_item_username_text_view
+        val likes: TextView = view.list_item_likes_text_view
     }
 
 

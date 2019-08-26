@@ -3,14 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_extra_small">
 
     <com.davidodari.splashy.customview.SplashyImageView
         android:id="@+id/list_item_splashy_image_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
+        android:clickable="true"
         android:contentDescription="@string/photo_content_description"
+        android:focusable="true"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -31,17 +34,35 @@
         android:id="@+id/list_item_username_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_small"
         android:ellipsize="end"
         android:maxLines="1"
         android:padding="@dimen/padding_extra_small"
-        android:textColor="@android:color/white"
+        android:textColor="?attr/colorOnPrimarySurface"
         android:textSize="@dimen/user_name_text_size"
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:text="David Odari" />
+
+
+    <TextView
+        android:id="@+id/list_item_likes_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small"
+        android:drawableStart="@drawable/ic_likes"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:padding="@dimen/padding_extra_small"
+        android:textColor="?attr/colorOnPrimarySurface"
+        android:textSize="@dimen/user_name_text_size"
+        android:drawablePadding="@dimen/padding_extra_small"
+        app:drawableTint="?attr/colorSecondary"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toTopOf="@id/list_item_username_text_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:text="12" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

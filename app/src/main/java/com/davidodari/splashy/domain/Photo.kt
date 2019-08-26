@@ -10,6 +10,7 @@ import com.google.gson.annotations.SerializedName
 data class Photo(
     @SerializedName("id") val id: String,
     @SerializedName("width") val width: Long,
+    @SerializedName("likes") val likes: Long,
     @SerializedName("height") val height: Long,
     @SerializedName("color") val color: String? = "#000",
     @SerializedName("description") val description: String?,
