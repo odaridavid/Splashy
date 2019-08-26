@@ -45,6 +45,7 @@ dependencies {
     def gson_converter_version = "2.3.0"
     def logging_interceptor_version = "3.14.1"
     def lifecycle_version = "2.2.0-alpha03"
+    def material_theme_version = "1.1.0-alpha09"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -52,6 +53,8 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.0.2'
     implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    implementation "com.google.android.material:material:$material_theme_version"
 
     //Timber -> Logging Library
     implementation "com.jakewharton.timber:timber:$timber_version"
