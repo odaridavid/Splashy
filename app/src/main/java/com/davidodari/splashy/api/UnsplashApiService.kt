@@ -1,8 +1,10 @@
 package com.davidodari.splashy.api
 
-import com.davidodari.splashy.models.PhotosResponse
+import com.davidodari.splashy.BuildConfig
+import com.davidodari.splashy.domain.Photo
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.Query
 
 /**
@@ -14,8 +16,9 @@ interface UnsplashApiService {
 
     @GET("photos")
     suspend fun loadPhotos(
-        @Query("page") page: Int = 1,
-        @Query("per_page") perPage: Int = 10
-    ): Response<PhotosResponse>
+        @Header("Authorization") auth: String? = " Client-ID ${BuildConfig.ACCESS_KEY}",
+        @Query("page") page: Int,
+        @Query("per_page") perPage: Int
+    ): Response<List<Photo>>
 
 }

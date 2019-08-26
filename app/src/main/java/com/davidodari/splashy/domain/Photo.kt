@@ -8,28 +8,15 @@ import com.google.gson.annotations.SerializedName
  *
  **/
 data class Photo(
-    val id: String,
-    val width: Long,
-    val height: Long,
-    val color: String,
-    val description: String,
-    val user: User,
-    val urls: Urls,
-    val links: Links
+    @SerializedName("id") val id: String,
+    @SerializedName("width") val width: Long,
+    @SerializedName("height") val height: Long,
+    @SerializedName("color") val color: String? = "#000",
+    @SerializedName("description") val description: String?,
+    @SerializedName("urls") val urls: Urls,
+    @SerializedName("user") val user: User
 )
 
 data class Urls(
-    val raw: String,
-    val full: String,
-    val regular: String,
-    val small: String,
-    val thumb: String
-)
-
-data class Links(
-    val self: String,
-    val html: String,
-    val download: String,
-    @SerializedName("download_location")
-    val downloadLocation: String
+    @SerializedName("small") val small: String
 )

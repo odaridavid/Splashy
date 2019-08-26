@@ -8,21 +8,18 @@ import com.google.gson.annotations.SerializedName
  *
  **/
 data class User(
-    val id: String,
-    val username: String,
-    val name: String,
-    @SerializedName("first_name")
-    val firstName: String,
-    @SerializedName("last_name")
-    val lastName: String,
-    val bio: String,
-    val location: String,
-    @SerializedName("profile_image")
-    val profileImage: ProfileImage
+    @SerializedName("id") val id: String,
+    @SerializedName("username") val username: String?,
+    @SerializedName("name") val name: String?,
+    @SerializedName("first_name") val firstName: String?,
+    @SerializedName("last_name") val lastName: String?,
+    @SerializedName("bio") val bio: String?,
+    @SerializedName("location") val location: String?,
+    @SerializedName("profile_image") val profileImage: ProfileImage?
 )
 
 data class ProfileImage(
-    val small: String,
-    val medium: String,
-    val large: String
+    val small: String?,
+    val medium: String?,
+    val large: String?
 )

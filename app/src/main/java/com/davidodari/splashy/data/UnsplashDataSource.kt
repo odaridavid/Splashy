@@ -25,12 +25,15 @@ class UnsplashDataSource(private val unsplashApiService: UnsplashApiService) :
     ) {
         GlobalScope.launch {
             try {
-                val response = unsplashApiService.loadPhotos(1, params.requestedLoadSize)
+                val response = unsplashApiService.loadPhotos(page = 1, perPage = 20)
                 when {
                     response.isSuccessful -> {
-                        val photoList = response.body()?.photos
-                        Timber.d("${photoList?.forEach { println(it.description) }}")
-                        callback.onResult(photoList as MutableList<Photo>, null, NEXT_PAGE_INIT)
+                        val photoList = response.body()
+                        callback.onResult(
+                            photoList!!,
+                            null,
+                            NEXT_PAGE_INIT
+                        )
                     }
                 }
             } catch (e: Exception) {
@@ -42,13 +45,16 @@ class UnsplashDataSource(private val unsplashApiService: UnsplashApiService) :
     override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, Photo>) {
         GlobalScope.launch {
             try {
+                Timber.d("${params.key}")
                 val response =
-                    unsplashApiService.loadPhotos(params.key, params.requestedLoadSize)
+                    unsplashApiService.loadPhotos(
+                        page = params.key,
+                        perPage = params.requestedLoadSize
+                    )
                 when {
                     response.isSuccessful -> {
-                        val photoList = response.body()?.photos
-                        Timber.d("${photoList?.forEach { println(it.description) }}")
-                        callback.onResult(photoList as MutableList<Photo>, params.key + 1)
+                        val photoList = response.body()
+                        callback.onResult(photoList!!, params.key + 1)
                     }
                 }
             } catch (e: Exception) {
@@ -57,7 +63,24 @@ class UnsplashDataSource(private val unsplashApiService: UnsplashApiService) :
         }
     }
 
+
     override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, Photo>) {
+//        GlobalScope.launch {
+//            try {
+//                val response =
+//                    unsplashApiService.loadPhotos(params.key, params.requestedLoadSize)
+//                when {
+//                    response.isSuccessful -> {
+//                        val photoList = response.body()?.photos
+//                        Timber.d("${photoList?.forEach { println(it.description) }}")
+//                        val pageKey = if (params.key > 1) params.key - 1 else 1
+//                        callback.onResult(photoList as MutableList<Photo>, pageKey)
+//                    }
+//                }
+//            } catch (e: Exception) {
+//                Timber.d("Loading Next Set Failed : ${e.message}")
+//            }
+//        }
     }
 
 }
