@@ -2,12 +2,12 @@ package com.davidodari.splashy.customview
 
 import android.content.Context
 import android.util.AttributeSet
-import android.widget.ImageView
+import androidx.appcompat.widget.AppCompatImageView
 
 
 class SplashyImageView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-) : ImageView(context, attrs, defStyleAttr) {
+) : AppCompatImageView(context, attrs, defStyleAttr) {
 
     var aspectRatio: Double = -1.0
 
