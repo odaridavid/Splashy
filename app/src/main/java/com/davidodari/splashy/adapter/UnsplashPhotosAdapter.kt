@@ -44,6 +44,9 @@ class UnsplashPhotosAdapter :
         }
     }
 
+    /**
+     * PhotoViewHolder holds reference to the views for each item in the adapter
+     */
     inner class PhotoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val unsplashImageView: SplashyImageView = view.list_item_splashy_image_view
         val unsplashUsernameTextView: TextView = view.list_item_username_text_view

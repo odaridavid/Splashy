@@ -14,6 +14,9 @@ import retrofit2.http.Query
  **/
 interface UnsplashApiService {
 
+    /**
+     * This loads up photos per page from the Unsplash API
+     */
     @GET("photos")
     suspend fun loadPhotos(
         @Header("Authorization") auth: String? = " Client-ID ${BuildConfig.ACCESS_KEY}",

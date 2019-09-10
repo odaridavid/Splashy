@@ -26,6 +26,9 @@ object UnsplashClient {
             .build()
     }
 
+    /**
+     * Provides UnsplashApiService interface through builder pattern
+     */
     fun getInstance(): UnsplashApiService {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
