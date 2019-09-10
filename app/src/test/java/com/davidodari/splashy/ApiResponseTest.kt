@@ -29,9 +29,11 @@ class ApiResponseTest {
      */
     @Test
     fun loadImagesTest() {
-        val response = runBlocking { unsplashService.loadPhotos(page = 2, perPage = 10) }
-        val size = response.body()?.size ?: 0
-        assertTrue(size > 0)
+        runBlocking {
+            val response = unsplashService.loadPhotos(page = 2, perPage = 10)
+            val size = response.body()?.size ?: 0
+            assertTrue(size > 0)
+        }
     }
 
 }
