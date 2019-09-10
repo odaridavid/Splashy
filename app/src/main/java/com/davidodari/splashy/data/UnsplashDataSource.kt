@@ -34,6 +34,8 @@ class UnsplashDataSource(private val unsplashApiService: UnsplashApiService) :
                         }
                     }
                 }
+            } catch (e: IllegalStateException) {
+                Timber.d("Data Initialisation Failed : ${e.message}")
             } catch (e: Exception) {
                 Timber.d("Data Initialisation Failed : ${e.message}")
             }
@@ -57,6 +59,8 @@ class UnsplashDataSource(private val unsplashApiService: UnsplashApiService) :
                         }
                     }
                 }
+            } catch (e: IllegalStateException) {
+                Timber.d("Data Initialisation Failed : ${e.message}")
             } catch (e: Exception) {
                 Timber.d("Loading Next Set Failed : ${e.message}")
             }
