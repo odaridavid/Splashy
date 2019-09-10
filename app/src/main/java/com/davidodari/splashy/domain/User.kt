@@ -18,6 +18,9 @@ data class User(
     @SerializedName("profile_image") val profileImage: ProfileImage?
 )
 
+/**
+ * Different sizes for the users profile photo
+ */
 data class ProfileImage(
     val small: String?,
     val medium: String?,

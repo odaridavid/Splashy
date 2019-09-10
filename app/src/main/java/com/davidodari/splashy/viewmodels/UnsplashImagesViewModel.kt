@@ -16,7 +16,7 @@ import com.davidodari.splashy.domain.Photo
  **/
 class UnsplashImagesViewModel : ViewModel() {
 
-    var photoList: LiveData<PagedList<Photo>>
+    private var photoList: LiveData<PagedList<Photo>>
 
     init {
         val config = PagedList.Config.Builder()
@@ -26,6 +26,9 @@ class UnsplashImagesViewModel : ViewModel() {
         photoList = initializedPagedListBuilder(config).build()
     }
 
+    /**
+     * Retrieves data from the data source and is served as a live data paged list
+     */
     fun getImages(): LiveData<PagedList<Photo>> = photoList
 
     private fun initializedPagedListBuilder(config: PagedList.Config):

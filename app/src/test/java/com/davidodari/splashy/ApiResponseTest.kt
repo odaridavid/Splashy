@@ -16,11 +16,17 @@ class ApiResponseTest {
     //TODO Mocking
     lateinit var unsplashService: UnsplashApiService
 
+    /**
+     * Initialize Api Service client
+     */
     @Before
     fun setup() {
         unsplashService = UnsplashClient.getInstance()
     }
 
+    /**
+     * Check that images are loaded
+     */
     @Test
     fun loadImagesTest() {
         val response = runBlocking { unsplashService.loadPhotos(page = 2, perPage = 10) }

@@ -3,10 +3,8 @@ package com.davidodari.splashy.domain
 import com.google.gson.annotations.SerializedName
 
 /**
- * Created By David Odari
- * On 25/08/19
- *
- **/
+ * Represents a single photo json structure
+ */
 data class Photo(
     @SerializedName("id") val id: String,
     @SerializedName("width") val width: Long,
@@ -18,6 +16,9 @@ data class Photo(
     @SerializedName("user") val user: User
 )
 
+/**
+ * Urls to image link/location
+ */
 data class Urls(
     @SerializedName("small") val small: String
 )
