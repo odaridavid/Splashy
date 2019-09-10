@@ -34,9 +34,7 @@ class UnsplashDataSource(private val unsplashApiService: UnsplashApiService) :
                         }
                     }
                 }
-            } catch (e: IllegalStateException) {
-                Timber.d("Data Initialisation Failed : ${e.message}")
-            } catch (e: Exception) {
+            }catch (e: IOException) {
                 Timber.d("Data Initialisation Failed : ${e.message}")
             }
         }
@@ -59,9 +57,7 @@ class UnsplashDataSource(private val unsplashApiService: UnsplashApiService) :
                         }
                     }
                 }
-            } catch (e: IllegalStateException) {
-                Timber.d("Data Initialisation Failed : ${e.message}")
-            } catch (e: Exception) {
+            } catch (e: IOException) {
                 Timber.d("Loading Next Set Failed : ${e.message}")
             }
         }
@@ -69,6 +65,7 @@ class UnsplashDataSource(private val unsplashApiService: UnsplashApiService) :
 
 
     override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, Photo>) {
+        TODO("implementation")
     }
 
 }
