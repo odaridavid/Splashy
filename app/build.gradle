@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
-apply from: 'jacoco.gradle'
+apply plugin: 'jacoco-android'
 
 android {
     compileSdkVersion 29
@@ -16,12 +16,13 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "ACCESS_KEY", "\"${project.hasProperty("UNSPLASH_ACCESS_KEY") ? UNSPLASH_ACCESS_KEY : System.getenv("UNSPLASH_API_KEY")}\"")
     }
     buildTypes {
         debug {
             //for UI tests
             testCoverageEnabled true
-            buildConfigField("String", "ACCESS_KEY", "\"${project.hasProperty("UNSPLASH_ACCESS_KEY") ? UNSPLASH_ACCESS_KEY : System.getenv("UNSPLASH_API_KEY")}\"")
         }
         release {
             minifyEnabled false
