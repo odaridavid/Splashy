@@ -6,6 +6,7 @@ import com.davidodari.splashy.domain.Photo
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import java.io.IOException
 
 /**
  * Created By David Odari
@@ -34,7 +35,7 @@ class UnsplashDataSource(private val unsplashApiService: UnsplashApiService) :
                         }
                     }
                 }
-            }catch (e: IOException) {
+            } catch (e: IOException) {
                 Timber.d("Data Initialisation Failed : ${e.message}")
             }
         }
