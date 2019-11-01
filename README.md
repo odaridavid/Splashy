@@ -7,4 +7,18 @@
 
 This is an Android client for the Unsplash API.
 
+## Prerequisites
+
+To Interact with the Unsplash API an Access Key will be required,to get one;
+1. Create an Account on Unsplash
+2. Register your application
+3. Obtain Access Key from application dashboard
+Then Place the access key in your environment as a variable this can be done in
+the global ```gradle.properties``` file as such
+```properties
+UNSPLASH_ACCESS_KEY = your access key
+```
+## Screenshots
+|![Home Screen](screenshots/home.png)|
+|:--:|
 <i>&copy; David Odari,2019 </i>

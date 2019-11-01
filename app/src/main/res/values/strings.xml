@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Splashy</string>
+    <string name="photo_content_description">This is an image</string>
 </resources>
